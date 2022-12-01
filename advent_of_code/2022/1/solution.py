@@ -3,31 +3,30 @@ import pytest
 from helpers import *
 from helpers import get_full_text
 
-SILVER_SAMPLE_INPUT = get_full_text("silver/sample_input.txt")
-SILVER_SAMPLE_OUTPUT = get_full_text("silver/sample_output.txt")
+INPUT = get_full_text(f"input.txt")
 
-GOLD_SAMPLE_INPUT = get_full_text("gold/sample_input.txt")
-GOLD_SAMPLE_OUTPUT = get_full_text("gold/sample_output.txt")
-
-INPUT = get_full_text("input.txt")
-
-
-def test_silver_solution():
-    assert silver_solution(SILVER_SAMPLE_INPUT) == SILVER_SAMPLE_OUTPUT
+PART_1_SAMPLE_INPUT = get_full_text("samples/part_1_input.txt")
+PART_1_SAMPLE_SOLUTION = get_full_text("samples/part_1_solution.txt")
+PART_2_SAMPLE_INPUT = get_full_text("samples/part_2_input.txt")
+PART_2_SAMPLE_SOLUTION = get_full_text("samples/part_2_solution.txt")
 
 
-def test_gold_solution():
-    assert gold_solution(GOLD_SAMPLE_INPUT) == GOLD_SAMPLE_OUTPUT
+def test_part_1_solution():
+    assert part_1_solution(PART_1_SAMPLE_INPUT) == PART_1_SAMPLE_SOLUTION
 
 
-def silver_solution(puzzle_input):
+def test_part_2_solution():
+    assert part_2_solution(PART_2_SAMPLE_INPUT) == PART_2_SAMPLE_SOLUTION
+
+
+def part_1_solution(puzzle_input):
     lines = full_text_to_list(puzzle_input)
 
     # Solution code goes here
     return ''
 
 
-def gold_solution(puzzle_input):
+def part_2_solution(puzzle_input):
     lines = full_text_to_list(puzzle_input)
 
     # Solution code goes here
