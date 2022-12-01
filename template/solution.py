@@ -11,12 +11,16 @@ PART_2_SAMPLE_INPUT = get_full_text("samples/part_2_input.txt")
 PART_2_SAMPLE_SOLUTION = get_full_text("samples/part_2_solution.txt")
 
 
-def test_part_1_solution():
-    assert part_1_solution(PART_1_SAMPLE_INPUT) == PART_1_SAMPLE_SOLUTION
+def part_1_solution_test():
+    if part_1_solution(PART_1_SAMPLE_INPUT) == PART_1_SAMPLE_SOLUTION:
+        return "PASS"
+    return "FAIL"
 
 
-def test_part_2_solution():
-    assert part_2_solution(PART_2_SAMPLE_INPUT) == PART_2_SAMPLE_SOLUTION
+def part_2_solution_test():
+    if part_2_solution(PART_2_SAMPLE_INPUT) == PART_2_SAMPLE_SOLUTION:
+        return "PASS"
+    return "FAIL"
 
 
 def part_1_solution(puzzle_input):
@@ -34,4 +38,10 @@ def part_2_solution(puzzle_input):
 
 
 if __name__ == "__main__":
-    pytest.main()
+    if not INPUT:
+        INPUT = download_input(*year_and_date(__file__))
+        with open("input.txt", "wb") as f:
+            f.write(INPUT)
+    print(f"Part_1: {part_1_solution_test()} -- Full Solution: {part_1_solution(INPUT)}")
+
+    print(f"Part_2: {part_2_solution_test()} -- Full Solution: {part_2_solution(INPUT)}")
