@@ -1,7 +1,3 @@
-from pathlib import Path
-import shutil
-
-
 def get_full_text(path: str):
     with open(path, "r") as f:
         output = f.read()

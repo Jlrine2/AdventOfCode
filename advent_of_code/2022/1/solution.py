@@ -20,17 +20,32 @@ def test_part_2_solution():
 
 
 def part_1_solution(puzzle_input):
-    lines = full_text_to_list(puzzle_input)
-
-    # Solution code goes here
-    return ''
+    lines = full_text_to_list(puzzle_input,)
+    elf_food = []
+    max_calories = 0
+    for line in lines:
+        if line == '':
+            calories = sum(elf_food)
+            if calories > max_calories:
+                max_calories = calories
+            elf_food = []
+        else:
+            elf_food.append(int(line))
+    return str(max_calories)
 
 
 def part_2_solution(puzzle_input):
     lines = full_text_to_list(puzzle_input)
-
-    # Solution code goes here
-    return ''
+    elf_food = []
+    elf_calories = []
+    for line in lines:
+        if line == '':
+            calories = sum(elf_food)
+            elf_calories.append(calories)
+            elf_food = []
+        else:
+            elf_food.append(int(line))
+    return str(sum(sorted(elf_calories)[:-4:-1]))
 
 
 if __name__ == "__main__":
